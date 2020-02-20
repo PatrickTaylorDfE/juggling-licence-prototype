@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/juggling-balls">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+
+      <form class="form" action="/check-your-answers" method="post">
+
+        <div class="govuk-form-group">
+  <label class="govuk-label" for="most-impressive-trick">
+    <h1 class="govuk-heading-xl">What is your most impressive juggling trick?</h1>
+  </label>
+  <div class="govuk-inset-text">
+  It better be good!
+</div>
+
+  <textarea class="govuk-textarea" id="most-impressive-trick" name="most-impressive-trick" rows="5" aria-describedby="more-detail-hint"></textarea>
+</div>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+  <details class="govuk-details" data-module="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        Help with tricks
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+      Do not make stuff up!
+    </div>
+  </details>
+{% endblock %}

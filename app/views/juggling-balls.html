@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/start">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+
+      <form class="form" action="/juggling-balls-answer" method="post">
+
+        <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">
+        How many balls can you juggle?
+      </h1>
+    </legend>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-warning-text">
+    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+    <strong class="govuk-warning-text__text">
+      <span class="govuk-warning-text__assistive">Warning</span>
+      You can be fined up to £5,000 if lie about your balls.
+    </strong>
+  </div>
+  {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  classes: "govuk-radios--inline",
+  idPrefix: "how-many-balls",
+  name: "how-many-balls",
+  fieldset: {
+    legend: {
+      text: "How many balls can you juggle?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--xl"
+    }
+  },
+  items: [
+    {
+      value: "3 or more",
+      text: "3 or more"
+    },
+    {
+      value: "1 or 2",
+      text: "1 or 2"
+    },
+    {
+      value: "None - I cannot juggle",
+      text: "None - I cannot juggle"
+    }
+  ]
+}) }}
+
+  </fieldset>
+</div>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
